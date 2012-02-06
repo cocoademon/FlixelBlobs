@@ -15,13 +15,13 @@ package
 	 */
 	public class BlobbyGroup extends FlxGroup 
 	{
-		private var _blobBuffers:Dictionary;
-		private var _zeroPoint:Point;
+		protected var _blobBuffers:Dictionary;
+		protected var _zeroPoint:Point;
 		
-		private var _blobColour:uint;
-		private var _blobThreshold:uint;
+		protected var _blobColour:uint;
+		protected var _blobThreshold:uint;
 		
-		public function BlobbyGroup(MaxSize:uint=0, BlobColour:uint = 0xFFFF0000, BlobThreshold = 0x20) 
+		public function BlobbyGroup(MaxSize:uint=0, BlobColour:uint = 0xFFFF0000, BlobThreshold:uint = 0x20) 
 		{
 			super(MaxSize);
 			

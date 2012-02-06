@@ -32,25 +32,29 @@ package
 			t.alignment = "center";
 			add(t);
 			
-			_blobs = new BlobbyGroup();
+			_blobs = new WaterGroup(0, 0xFF3080FF);
 			
+			// Create the particle emitter
 			_emitter = new FlxEmitter(FlxG.width / 2, FlxG.height / 2, 0);
 			for (var i:int = 0; i < _NUM_PARTICLES; ++i)
 			{
 				var particle:FlxParticle = new FlxParticle();
-				particle.makeGraphic(5, 5, 0xFFFF3000);
+				particle.makeGraphic(5, 5, 0xFFFFFFFF);
 				particle.exists = false;
 				_emitter.add(particle);
 			}
 			
 			// turn off emitter rotations
 			_emitter.setRotation(0, 0);
+			_emitter.gravity = 400;
 			
 			_emitter.start(false, 1, 1.0 / 60.0);
 			
 			_blobs.add(_emitter);
 			
 			add(_blobs);
+			
+			_blobs.add(new FlxSprite(0, FlxG.height - 20).makeGraphic(FlxG.width, 20))
 			
 			t = new FlxText(0,FlxG.height* 2/3-10,FlxG.width,"Text in front of blobs");
 			t.size = 16;
