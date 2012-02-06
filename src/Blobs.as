@@ -11,7 +11,7 @@ package
 
 		public function Blobs()
 		{
-			super(320,240,MenuState,2);
+			super(320,240,MenuState,2, 60, 60);
 		}
 	}
 }
