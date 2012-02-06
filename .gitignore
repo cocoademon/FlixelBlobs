@@ -1,0 +1,5 @@
+# Ignore .swf output
+*.swf
+
+# Ignore auto-generated project files
+obj/*
